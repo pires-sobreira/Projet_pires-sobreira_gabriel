@@ -1,2 +1,7 @@
+com/ensta/librarymanager/model/Abonnement.class
 com/ensta/librarymanager/persistence/ConnectionManager.class
+com/ensta/librarymanager/model/Livre.class
+com/ensta/librarymanager/test/ModeleTest.class
+com/ensta/librarymanager/model/Emprunt.class
+com/ensta/librarymanager/model/Membre.class
 com/ensta/librarymanager/utils/FillDatabase.class
