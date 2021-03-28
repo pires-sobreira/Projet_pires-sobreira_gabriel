@@ -3,7 +3,7 @@ package com.ensta.librarymanager.dao;
 import java.util.List;
 
 import com.ensta.librarymanager.exception.DaoException;
-import com.ensta.librarymanager.modele.Livre;
+import com.ensta.librarymanager.model.Livre;
 
 public interface LivreDao {
 	public List<Livre> getList() throws DaoException;
