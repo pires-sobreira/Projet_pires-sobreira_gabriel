@@ -26,10 +26,10 @@ public class DaoTest {
         int idMembre = membreDao.create("sobreira", "gabriel", "1, allee des techniques avancees", "gggggg@ensta.fr", "1234-5678", Abonnement.VIP);
         System.out.println("\n\tNouvelle id: " + idMembre);
 
-        // Membre membreUpdate = new Membre(12, "Vieira", "Maria Paula", "maria-paula.vieira@ensta-paris.fr", "+33000", "1,Allee des techniques avancees", Abonnement.PREMIUM);
-        // membreDao.update(membreUpdate);
-        // List<Membre> tousMembreMJ = membreDao.getList();
-        // System.out.println("\n\tmise a jour list: " + membreUpdate);
+        Membre membreUpdate = new Membre(12, "Vieira", "Maria Paula", "1,Allee des techniques avancees", "maria-paula.vieira@ensta-paris.fr", "+33000", Abonnement.PREMIUM);
+        membreDao.update(membreUpdate);
+        List<Membre> tousMembreMJ = membreDao.getList();
+        System.out.println("\n\tmise a jour list: " + membreUpdate);
 
         membreDao.delete(4);
         List<Membre> tousMembreD = membreDao.getList();
