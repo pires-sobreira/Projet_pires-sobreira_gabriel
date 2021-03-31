@@ -1,6 +1,7 @@
 package com.ensta.librarymanager.model;
 
 public class Membre {
+    private static int ID = 0;
     private int id;
     private String nom;
     private String prenom;
@@ -8,10 +9,21 @@ public class Membre {
     private String email;
     private String telephone;
     private Abonnement abonnement;
+    private int i;
 
     //Constructors
     public Membre(int id, String nom, String prenom, String adress, String email, String telephone, Abonnement abonnement){
         this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adress = adress;
+        this.email = email;
+        this.telephone = telephone;
+        this.abonnement = abonnement;
+    }
+    public Membre(String nom, String prenom, String adress, String email, String telephone, Abonnement abonnement){
+        i = ID++;
+        this.id = i;
         this.nom = nom;
         this.prenom = prenom;
         this.adress = adress;

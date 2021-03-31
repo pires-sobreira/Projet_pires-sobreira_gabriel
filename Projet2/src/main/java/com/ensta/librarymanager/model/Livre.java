@@ -1,6 +1,7 @@
 package com.ensta.librarymanager.model;
 
 public class Livre {
+    private static int ID = 0;
     private int id;
     private String titre;
     private String auteur;
@@ -9,6 +10,13 @@ public class Livre {
     //Constructeurs
     public Livre(int id, String titre, String auteur, String isbn){
         this.id = id;
+        this.titre = titre;
+        this.auteur = auteur;
+        this.isbn = isbn;
+    }
+    public Livre(String titre, String auteur, String isbn){
+        ID++;
+        this.id = ID;
         this.titre = titre;
         this.auteur = auteur;
         this.isbn = isbn;

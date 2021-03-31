@@ -4,6 +4,7 @@ import java.util.Date;
 import java.time.LocalDate;
 
 public class Emprunt {
+    private static int ID = 0;
     private int id;
     private int idMembre;
     private int idLivre;
@@ -18,6 +19,16 @@ public class Emprunt {
         this.dateEmprunt = dateEmprunt;
         this.dateRetour = dateRetour;
     }
+
+    public Emprunt(int idMembre, int idLivre, LocalDate dateEmprunt, LocalDate dateRetour){
+        ID++;
+        this.id = ID;
+        this.idMembre = idMembre;
+        this.idLivre = idLivre;
+        this.dateEmprunt = dateEmprunt;
+        this.dateRetour = dateRetour;
+    }
+
     public Emprunt(){}
 
     //Getters
