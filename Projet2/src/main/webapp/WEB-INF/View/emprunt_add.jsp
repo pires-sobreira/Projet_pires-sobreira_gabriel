@@ -22,7 +22,7 @@
       </div>
       <div class="row">
       <div class="container">
-        <h5>S�lectionnez le livre et le membre emprunteur</h5>
+        <h5>Sélectionnez le livre et le membre emprunteur</h5>
         <div class="row">
 	      <form action="/LibraryManager/emprunt_add" method="post" class="col s12">
 	        <div class="row">
@@ -30,9 +30,9 @@
 	            <select id="idLivre" name="idLivre" class="browser-default">
 	              <option value="" disabled selected>-- Livres --</option>
 	              <!-- TODO : parcourir la liste des livres disponibles et afficher autant d'options que n�cessaire, sur la base de l'exemple ci-dessous -->
-                  <c:if test="${!availableBookList.isEmpty()}">
-                    <c:forEach items="${availableBookList}" var="book">
-                      <option value="${book.id}">"${book.title}", ${book.author}</option>
+                  <c:if test="${!livreDisponibleList.isEmpty()}">
+                    <c:forEach items="${livreDisponibleList}" var="livre">
+                      <option value="${livre.id}">"${livre.titre}", ${livre.auteur}</option>
                     </c:forEach>
                   </c:if>
 	            </select>
@@ -41,9 +41,9 @@
 	            <select id="idMembre" name="idMembre" class="browser-default">
 	              <option value="" disabled selected>-- Membres --</option>
 	              <!-- TODO : parcourir la liste des membres pouvant emprunter et afficher autant d'options que n�cessaire, sur la base de l'exemple ci-dessous -->
-                <c:if test="${!availableMemberList.isEmpty()}">
-                  <c:forEach items="${availableMemberList}" var="member">
-                    <option value="${member.id}">${member.firstName} ${member.lastName}</option>
+                <c:if test="${!membreDisponibleList.isEmpty()}">
+                  <c:forEach items="${membreDisponibleList}" var="membre">
+                    <option value="${membre.id}">${membre.prenom} ${membre.nom}</option>
                   </c:forEach>
                 </c:if>
 	            </select>

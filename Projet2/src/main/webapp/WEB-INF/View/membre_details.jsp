@@ -22,16 +22,16 @@
       </div>
       <div class="row">
       <div class="container">
-      <h5>D�tails du membre n°${member.id}</h5> <!-- TODO : remplacer 007 par l'id du membre -->
+      <h5>D�tails du membre n°${membre.id}</h5> <!-- TODO : remplacer 007 par l'id du membre -->
         <div class="row">
-	      <form action="/LibraryManager/membre_details?id=${member.id}" method="post" class="col s12"> <!-- TODO : remplacer idDuMembre par l'id du membre -->
+	      <form action="/LibraryManager/membre_details?id=${membre.id}" method="post" class="col s12"> <!-- TODO : remplacer idDuMembre par l'id du membre -->
 	        <div class="row">
 	          <div class="input-field col s4">
-	            <input id="nom" type="text" value=${member.nom} name="nom"> <!-- TODO : remplacer nomDuMembre par le nom du membre -->
+	            <input id="nom" type="text" value=${membre.nom} name="nom"> <!-- TODO : remplacer nomDuMembre par le nom du membre -->
 	            <label for="nom">Nom</label>
 	          </div>
 	          <div class="input-field col s4">
-	            <input id="prenom" type="text" value=${member.prenom} name="prenom"> <!-- TODO : remplacer prenomDuMembre par le pr�nom du membre -->
+	            <input id="prenom" type="text" value=${membre.prenom} name="prenom"> <!-- TODO : remplacer prenomDuMembre par le pr�nom du membre -->
 	            <label for="prenom">Prenom</label>
 	          </div>
 	          <div class="input-field col s4">
@@ -39,26 +39,23 @@
 	              <!-- TODO : faire en sorte que l'option correspondant � l'abonnement du membre soit s�lectionn�e par d�faut -->
 	              <!-- Pour cela, vous devez rajouter l'attribut selecter sur la balise <option> concern�e -->
 					<c:choose>
-						<c:when test="${member.subscription == 'BASIC'}">
+						<c:when test="${membre.abonnement == 'BASIC'}">
 							<option value="BASIC" selected>Abonnement BASIC</option>
 							<option value="PREMIUM">Abonnement PREMIUM</option>
 							<option value="VIP">Abonnement VIP</option>
 						</c:when>
-						<c:when test="${member.subscription == 'PREMIUM'}">
+						<c:when test="${membre.abonnement == 'PREMIUM'}">
 							<option value="BASIC">Abonnement BASIC</option>
 							<option value="PREMIUM" selected>Abonnement PREMIUM</option>
 							<option value="VIP">Abonnement VIP</option>
 						</c:when>
-						<c:when test="${member.subscription == 'VIP'}">
+						<c:when test="${membre.abonnement == 'VIP'}">
 							<option value="BASIC">Abonnement BASIC</option>
 							<option value="PREMIUM">Abonnement PREMIUM</option>
 							<option value="VIP" selected>Abonnement VIP</option>
 						</c:when>
 						<c:otherwise>
 							<option value="" disabled selected>---</option>
-							<option value="BASIC">Abonnement BASIC</option>
-							<option value="PREMIUM">Abonnement PREMIUM</option>
-							<option value="VIP">Abonnement VIP</option>
 						</c:otherwise>
 					</c:choose>
 	            </select>
@@ -66,18 +63,18 @@
 	        </div>
 	        <div class="row">
 	          <div class="input-field col s12">
-	            <input id="adresse" type="text" value=${member.adress} name="adresse"> <!-- TODO : remplacer adresseDuMembre par l'adresse du membre -->
+	            <input id="adresse" type="text" value=${membre.adress} name="adresse"> <!-- TODO : remplacer adresseDuMembre par l'adresse du membre -->
 	            <label for="adresse">Adresse</label>
 	          </div>
 	        </div>
 	        <div class="row">
 	          <div class="input-field col s6">
-	            <input id="email" type="email" value=${member.email} name="email"> <!-- TODO : remplacer emailDuMembre par l'email du membre -->
+	            <input id="email" type="email" value=${membre.email} name="email"> <!-- TODO : remplacer emailDuMembre par l'email du membre -->
 	            <label for="email">E-mail</label>
 	          </div>
 	          <div class="input-field col s6">
-	            <input id="telephone" type="tel" value=${member.telephone} name="telephone"> <!-- TODO : remplacer telephoneDuMembre par le t�l�phone du membre -->
-	            <label for="telephone">T�l�phone</label>
+	            <input id="telephone" type="tel" value=${membre.telephone} name="telephone"> <!-- TODO : remplacer telephoneDuMembre par le t�l�phone du membre -->
+	            <label for="telephone">Télephone</label>
 	          </div>
 	        </div>
 	        <div class="row center">
@@ -87,7 +84,7 @@
 	      </form>
 	      
 	      <form action="/LibraryManager/membre_delete" method="get" class="col s12">
-	        <input type="hidden" value=${member.id} name="id"> <!-- TODO : remplacer idDuMembre par l'id du membre -->
+	        <input type="hidden" value=${membre.id} name="id"> <!-- TODO : remplacer idDuMembre par l'id du membre -->
 	        <div class="row center">
 	          <button class="btn waves-effect waves-light red" type="submit">Supprimer le membre
 	            <i class="material-icons right">delete</i>
@@ -106,11 +103,11 @@
                 </tr>
               </thead>
               <tbody id="results">
-				<c:if test="${!currentByMember.isEmpty()}"></c:if>
+				<c:if test="${!currentByMembre.isEmpty()}">
 					<c:forEach var="emprunt" items="${emprunts}">
 						<tr>
-						<td>"${current.book.title}" de ${current.book.author}</td>
-						<td>${current.loanDate}</td>
+						<td>"${emprunt.idLivre}"</td>
+						<td>${emprunt.dateEmprunt}</td>
 						<td>
 							<a href="emprunt_return?id=idDeLEmprunt"><ion-icon class="table-item" name="log-in"></a>
 						</td>

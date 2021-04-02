@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
@@ -31,13 +32,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <c:if test="${!bookList.isEmpty()}">
-                    <c:forEach items="${bookList}" var="book">
+                  <c:if test="${!livreList.isEmpty()}">
+                    <c:forEach items="${livreList}" var="livre">
                     <tr>
-                      <td>${book.title}</td>
-                      <td>${book.author}</td>
-                      <td>${book.isbn}</td>
-                      <td class="center"><a href="livre_details?id=${book.id}"><ion-icon class="details" name="information-circle-outline"></ion-icon></a></td>
+                      <td>${livre.titre}</td>
+                      <td>${livre.auteur}</td>
+                      <td>${livre.isbn}</td>
+                      <td class="center"><a href="livre_details?id=${livre.id}"><ion-icon class="details" name="information-circle-outline"></ion-icon></a></td>
                     </tr>
                     </c:forEach>
                   </c:if>

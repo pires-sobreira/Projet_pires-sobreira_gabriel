@@ -19,7 +19,7 @@ public class LivreListServlet extends HttpServlet{
         if (action.equals("/livre_list")){
             LivreServiceImpl livreService = LivreServiceImpl.getInstance();
             try {
-                request.setAttribute("bookList", livreService.getList());
+                request.setAttribute("livreList", livreService.getList());
             } catch (Exception e) {
                 e.printStackTrace();
             }

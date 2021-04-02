@@ -22,13 +22,13 @@ public class MembreDetailsServlet extends HttpServlet{
             EmpruntServiceImpl empruntService = EmpruntServiceImpl.getInstance();
 
             try {
-                request.setAttribute("member", membreService.getById(Integer.parseInt(request.getParameter("id"))));
+                request.setAttribute("membre", membreService.getById(Integer.parseInt(request.getParameter("id"))));
             } catch (Exception e) {
-                new ServletException("Cant get the chosen member", e);
+                new ServletException("Impossible d'obtenir le membre choisi ", e);
             }
 
             try {
-                request.setAttribute("currentByMember", empruntService.getListCurrentByMembre(Integer.parseInt(request.getParameter("id"))));
+                request.setAttribute("currentByMembre", empruntService.getListCurrentByMembre(Integer.parseInt(request.getParameter("id"))));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -44,7 +44,7 @@ public class MembreDetailsServlet extends HttpServlet{
 
         try {
             if (request.getParameter("prenom") == "" || request.getParameter("prenom") == null || request.getParameter("nom") == "" || request.getParameter("nom") == null){
-                throw new ServletException("First or Last names are empties!");
+                throw new ServletException("Les prénoms ou noms sont vides!");
             } else{
                 Membre nouvelleMembre = membreService.getById(Integer.parseInt(request.getParameter("id")));
                 nouvelleMembre.setPrenom(request.getParameter("prenom"));
@@ -60,7 +60,7 @@ public class MembreDetailsServlet extends HttpServlet{
                 } 
                 membreService.update(nouvelleMembre);
                 request.setAttribute("id", nouvelleMembre.getId());
-                request.setAttribute("currentByMember", empruntService.getListCurrentByMembre(nouvelleMembre.getId()));
+                request.setAttribute("currentByMembre", empruntService.getListCurrentByMembre(nouvelleMembre.getId()));
                 
                 
                 response.sendRedirect(request.getContextPath() + "/membre_details?id=" + nouvelleMembre.getId());

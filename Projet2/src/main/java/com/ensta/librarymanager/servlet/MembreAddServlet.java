@@ -20,7 +20,7 @@ public class MembreAddServlet extends HttpServlet{
         if (action.equals("/membre_add")){
             MembreServiceImpl membreService = MembreServiceImpl.getInstance();
             try {
-                request.setAttribute("availableMemberList", membreService.getList());
+                request.setAttribute("membreDisponibleList", membreService.getList());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -41,7 +41,7 @@ public class MembreAddServlet extends HttpServlet{
             }else{
                 int id = membreService.create(request.getParameter("nom"), request.getParameter("prenom"), request.getParameter("adresse"), request.getParameter("email"), request.getParameter("telephone"), Abonnement.BASIC);
                 request.setAttribute("id", id);
-                request.setAttribute("loanList", empruntService.getListCurrentByMembre(id));
+                request.setAttribute("empruntList", empruntService.getListCurrentByMembre(id));
                 response.sendRedirect(request.getContextPath() + "/membre_details?id=" + id);
             }
         } catch (Exception e) {

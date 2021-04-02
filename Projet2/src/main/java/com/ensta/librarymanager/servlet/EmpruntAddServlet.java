@@ -20,14 +20,14 @@ public class EmpruntAddServlet extends HttpServlet{
         if (action.equals("/emprunt_add")){
             MembreServiceImpl membreService = MembreServiceImpl.getInstance();
             try {
-                request.setAttribute("availableMemberList", membreService.getListMembreEmpruntPossible());
+                request.setAttribute("membreDisponibleList", membreService.getListMembreEmpruntPossible());
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             LivreServiceImpl livreService = LivreServiceImpl.getInstance();
             try {
-                request.setAttribute("availableBookList", livreService.getListDispo());
+                request.setAttribute("livreDisponibleList", livreService.getListDispo());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -46,7 +46,7 @@ public class EmpruntAddServlet extends HttpServlet{
             } else{
                 empruntService.create(Integer.parseInt(request.getParameter("idMembre")), Integer.parseInt(request.getParameter("idLivre")), LocalDate.now());
 						
-				request.setAttribute("loanList", empruntService.getListCurrent());
+				request.setAttribute("empruntList", empruntService.getListCurrent());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,14 +54,14 @@ public class EmpruntAddServlet extends HttpServlet{
 
         MembreServiceImpl membreService = MembreServiceImpl.getInstance();        
         try {
-            request.setAttribute("availableMemberList", membreService.getListMembreEmpruntPossible());
+            request.setAttribute("membreDisponibleList", membreService.getListMembreEmpruntPossible());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         LivreServiceImpl livreService = LivreServiceImpl.getInstance();     
         try {
-            request.setAttribute("availableBookList", livreService.getListDispo());
+            request.setAttribute("livreDisponibleList", livreService.getListDispo());
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", e.getMessage());

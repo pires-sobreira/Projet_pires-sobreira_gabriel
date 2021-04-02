@@ -35,8 +35,8 @@
                 <tbody id="results">
                 
                     <tr>
-                        <td>Titre du livre, <em>de Nom de l'auteur</em></td>
-                        <td>Pr�nom et nom du membre emprunteur</td>
+                        <td>Id du livre</td>
+                        <td>Id du membre emprunteur</td>
                         <td>Date de l'emprunt</td>
                         <td>
                             <a href="emprunt_return?id=idDeLEmprunt"><ion-icon class="table-item" name="log-in"></a>
@@ -44,19 +44,19 @@
                     </tr>
                   </thead>
                   <tbody id="results">
-                    <c:if test="${!loanList.isEmpty()}">
-                      <c:forEach items="${loanList}" var="loan">
+                    <c:if test="${!empruntList.isEmpty()}">
+                      <c:forEach items="${empruntList}" var="emprunt">
                         <tr>
-                            <td>${loan.book.title}, <em>de ${loan.book.author}</em></td>
-                            <td>${loan.member.firstName} ${loan.member.lastName}</td>
-                            <td>${loan.loanDate}</td>
+                            <td>${emprunt.idLivre}</td>
+                            <td>${emprunt.idMembre}</td>
+                            <td>${emprunt.dateEmprunt}</td>
                             <td>
                               <c:choose>
-                                <c:when test="${loan.returnDate == null}">
-                                  <a href="emprunt_return?id=${loan.id}"><ion-icon class="table-item" name="log-in"></a>
+                                <c:when test="${emprunt.dateRetour == null}">
+                                  <a href="emprunt_return?id=${emprunt.id}"><ion-icon class="table-item" name="log-in"></a>
                                 </c:when>
                                 <c:otherwise>
-                                  ${loan.returnDate}
+                                  ${emprunt.dateRetour}
                                 </c:otherwise>
                               </c:choose>
                             </td>

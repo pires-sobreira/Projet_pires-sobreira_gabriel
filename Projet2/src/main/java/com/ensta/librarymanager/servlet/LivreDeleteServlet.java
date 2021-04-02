@@ -25,7 +25,7 @@ public class LivreDeleteServlet extends HttpServlet{
 
             try {
                 if (id != -1){
-                    request.setAttribute("book", livreService.getById(id));
+                    request.setAttribute("livre", livreService.getById(id));
                     request.setAttribute("id", id);
                 } else{
 

@@ -27,9 +27,9 @@ public class EmpruntReturnServlet extends HttpServlet{
             try {
                 if (id != -1){
                     request.setAttribute("id", id);
-                    request.setAttribute("currentLoan", empruntService.getListCurrent());
+                    request.setAttribute("currentEmprunt", empruntService.getListCurrent());
                 } else{
-                    request.setAttribute("currentLoan", empruntService.getListCurrent());
+                    request.setAttribute("currentEmprunt", empruntService.getListCurrent());
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -48,7 +48,7 @@ public class EmpruntReturnServlet extends HttpServlet{
                 throw new ServletException("impossible d'obtenir le numéro d'identification!");
             } else{
                 empruntService.returnBook(Integer.parseInt(request.getParameter("id")));
-                request.setAttribute("currentLoan", empruntService.getListCurrent());
+                request.setAttribute("currentEmprunt", empruntService.getListCurrent());
             }
         } catch (Exception e) {
             throw new ServletException("ne peux pas envoyer!", e);

@@ -29,16 +29,16 @@
 	          <div class="input-field col s12">
 	            <select id="id" name="id" class="browser-default">
                 <c:choose>
-                  <c:when test="${id != null && !currentLoan.isEmpty()}">
-                    <c:forEach items="${currentLoan}" var="loan">
-                      <option value="${id}">"${loan.book.title}", emprunté par ${loan.member.firstName} ${loan.member.lastName}</option>
+                  <c:when test="${id != null && !currentEmprunt.isEmpty()}">
+                    <c:forEach items="${currentEmprunt}" var="emprunt">
+                      <option value="${id}">"${emprunt.idLivre}", emprunté par ${emprunt.idMembre}</option>
                     </c:forEach>
                   </c:when>
                   <c:otherwise>
 	                <option value="" disabled selected>---</option>
-                    <c:if test="${!currentLoan.isEmpty()}">
-                      <c:forEach items="${currentLoan}" var="loan">
-                        <option value="${loan.id}">"${loan.book.title}", emprunté par ${loan.member.firstName} ${loan.member.lastName}</option>
+                    <c:if test="${!currentEmprunt.isEmpty()}">
+                      <c:forEach items="${currentEmprunt}" var="emprunt">
+                        <option value="${emprunt.id}">"${emprunt.idLivre}", emprunté par ${emprunt.idMembre}</option>
                       </c:forEach>
                     </c:if>
                   </c:otherwise>

@@ -22,13 +22,13 @@ public class LivreDetailsServlet extends HttpServlet{
             EmpruntServiceImpl empruntService = EmpruntServiceImpl.getInstance();
 
             try {
-                request.setAttribute("book", livreService.getById(Integer.parseInt(request.getParameter("id"))));
+                request.setAttribute("livre", livreService.getById(Integer.parseInt(request.getParameter("id"))));
             } catch (Exception e) {
                 new ServletException("ne peux pas obtenir le livre choisi", e);
             }
 
             try {
-                request.setAttribute("currentBookings", empruntService.getListCurrentByLivre(Integer.parseInt(request.getParameter("id"))));
+                request.setAttribute("currentEmprunts", empruntService.getListCurrentByLivre(Integer.parseInt(request.getParameter("id"))));
             } catch (Exception e) {
                 e.printStackTrace();
             }

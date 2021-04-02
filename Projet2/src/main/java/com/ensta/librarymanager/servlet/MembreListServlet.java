@@ -19,7 +19,7 @@ public class MembreListServlet extends HttpServlet{
         if (action.equals("/membre_list")){
             MembreServiceImpl membreService = MembreServiceImpl.getInstance();
             try {
-                request.setAttribute("memberList", membreService.getList());
+                request.setAttribute("membreList", membreService.getList());
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -19,22 +19,22 @@ public class DashboardServlet extends HttpServlet{
         if (action.equals("/dashboard")) {
             final MembreServiceImpl membreService = MembreServiceImpl.getInstance();
             try {
-                request.setAttribute("numberOfMembres", membreService.count());
+                request.setAttribute("nombreDeMembres", membreService.count());
             } catch (final Exception e) {
                 e.printStackTrace();
             }
 
             final LivreServiceImpl livreService = LivreServiceImpl.getInstance();
             try {
-                request.setAttribute("numberOfBooks", livreService.count());
+                request.setAttribute("nombreDeLivres", livreService.count());
             } catch (final Exception e) {
                 e.printStackTrace();
             }
 
             final EmpruntServiceImpl empruntService = EmpruntServiceImpl.getInstance();
             try {
-                request.setAttribute("numberOfLoans", empruntService.count());
-                request.setAttribute("currentLoans", empruntService.getListCurrent());
+                request.setAttribute("nombreDEmprunts", empruntService.count());
+                request.setAttribute("currentEmprunt", empruntService.getListCurrent());
             } catch (final Exception e) {
                 e.printStackTrace();
             }

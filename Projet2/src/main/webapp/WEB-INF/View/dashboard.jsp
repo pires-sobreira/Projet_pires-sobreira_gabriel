@@ -24,7 +24,7 @@
         <div class="col l4 s6">
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>${numberOfMembers}</h3> <!-- TODO : afficher le nombre de membres � la place de 12 -->
+              <h3>${nombreDeMembres}</h3> <!-- TODO : afficher le nombre de membres � la place de 12 -->
               <p>Membres</p>
             </div>
             <div class="icon">
@@ -36,7 +36,7 @@
         <div class="col l4 s6">
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>${numberOfBooks}</h3> <!-- TODO : afficher le nombre de livres � la place de 27 -->
+              <h3>${nombreDeLivres}</h3> <!-- TODO : afficher le nombre de livres � la place de 27 -->
               <p>Livres</p>
             </div>
             <div class="icon">
@@ -48,7 +48,7 @@
         <div class="col l4 s6">
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>${numberOfLoans}</h3> <!-- TODO : afficher le nombre d'emprunts � la place de 1515 -->
+              <h3>${nombreDEmprunts}</h3> <!-- TODO : afficher le nombre d'emprunts � la place de 1515 -->
               <p>Emprunts</p>
             </div>
             <div class="icon">
@@ -70,12 +70,12 @@
                     </tr>
                 </thead>
                 <tbody id="results">
-                  <c:if test="${!currentLoans.isEmpty()}">
-                    <c:forEach items="${currentLoans}" var="loan">
+                  <c:if test="${!currentEmprunt.isEmpty()}">
+                    <c:forEach items="${currentEmprunt}" var="emprunt">
                       <tr>
-                          <td>Titre du livre, <em>de Nom de l'auteur</em></td>
-                          <td>Pr�nom et nom du membre emprunteur</td>
-                          <td>Date de l'emprunt</td>
+                          <td>${emprunt.idLivre}</em></td>
+                          <td>${emprunt.idMembre}</td>
+                          <td>${emprunt.dateEmprunt}</td>
                           <td>
                               <a href="emprunt_return?id=idDeLEmprunt"><ion-icon class="table-item" name="log-in"></a>
                           </td>

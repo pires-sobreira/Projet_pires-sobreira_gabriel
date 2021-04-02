@@ -21,10 +21,10 @@ public class EmpruntListServlet extends HttpServlet{
             
             try {
                 if (request.getParameter("show") != null && request.getParameter("show").contains("all")){
-                    request.setAttribute("loanList", empruntService.getList());
+                    request.setAttribute("empruntList", empruntService.getList());
                     request.setAttribute("show", "all");
                 }else {
-                    request.setAttribute("loanList", empruntService.getListCurrent());
+                    request.setAttribute("empruntList", empruntService.getListCurrent());
                     request.setAttribute("show", "current");
                 }
                     

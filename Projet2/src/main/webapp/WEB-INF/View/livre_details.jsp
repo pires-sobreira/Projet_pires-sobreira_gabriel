@@ -24,20 +24,20 @@
       <div class="container">
       <h5>Détails du livre n°${livre.id}</h5>
         <div class="row">
-	      <form action="/LibraryManager/livre_details?id=${book.id}" method="post" class="col s12"> <!-- TODO : remplacer idDuLivre par l'id du livre -->
+	      <form action="/LibraryManager/livre_details?id=${livre.id}" method="post" class="col s12"> <!-- TODO : remplacer idDuLivre par l'id du livre -->
 	        <div class="row">
 	          <div class="input-field col s12">
-	            <input id="titre" type="text" value="${book.title}"" name="titre"> <!-- TODO : remplacer titreDuLivre par le titre du livre -->
+	            <input id="titre" type="text" value="${livre.titre}"" name="titre"> <!-- TODO : remplacer titreDuLivre par le titre du livre -->
 	            <label for="titre">Titre</label>
 	          </div>
 	        </div>
 	        <div class="row">
 	          <div class="input-field col s6">
-	            <input id="auteur" type="text" value="${book.author}" name="auteur"> <!-- TODO : remplacer auteurDuLivre par l'auteur du livre -->
+	            <input id="auteur" type="text" value="${livre.auteur}" name="auteur"> <!-- TODO : remplacer auteurDuLivre par l'auteur du livre -->
 	            <label for="auteur">Auteur</label>
 	          </div>
 	          <div class="input-field col s6">
-	            <input id="isbn" type="text" value="${book.isnb}" name="isbn"> <!-- TODO : remplacer isbnDuLivre par l'isbn du livre -->
+	            <input id="isbn" type="text" value="${livre.isbn}" name="isbn"> <!-- TODO : remplacer isbnDuLivre par l'isbn du livre -->
 	            <label for="isbn">ISBN 13</label>
 	          </div>
 	        </div>
@@ -48,7 +48,7 @@
 	      </form>
 	      
 	      <form action="/LibraryManager/livre_delete" method="get" class="col s12">
-	        <input type="hidden" value="${book.id}" name="id"> <!-- TODO : remplacer idDuLivre par l'id du livre -->
+	        <input type="hidden" value="${livre.id}" name="id"> <!-- TODO : remplacer idDuLivre par l'id du livre -->
 	        <div class="row center">
 	          <button class="btn waves-effect waves-light red" type="submit">Supprimer le livre
 	            <i class="material-icons right">delete</i>
@@ -67,11 +67,11 @@
                 </tr>
               </thead>
               <tbody id="results">
-              <c:if test="${!currentBookings.isEmpty()}">
-                <c:forEach items="${currentBookings}" var="current">
+              <c:if test="${!currentEmprunts.isEmpty()}">
+                <c:forEach items="${currentEmprunts}" var="current">
                   <tr>
-                    <td>${current.member.firstName} ${current.member.lastName}</td>
-                    <td>${current.loanDate}</td>
+                    <td>${current.idMembre} ${current.idMembre}</td>
+                    <td>${current.dateEmprunt}</td>
                     <td>
                       <a href="emprunt_return?id=idDeLEmprunt"><ion-icon class="table-item" name="log-in"></a>
                     </td>

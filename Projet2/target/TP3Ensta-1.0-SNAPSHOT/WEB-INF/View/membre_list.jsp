@@ -34,15 +34,15 @@
               </tr>
             </thead>
             <tbody>
-              <c:if test="${!memberList.isEmpty()}">
-                <c:forEach items="${memberList}" var="member">
+              <c:if test="${!membreList.isEmpty()}">
+                <c:forEach items="${membreList}" var="membre">
                   <tr>
-                    <td>${member.prenom}</td>
-                    <td>${member.nom}</td>
-                    <td class="hide-on-small-only">${member.adress}</td>
-                    <td class="hide-on-small-only">${member.email}</td>
-                    <td class="hide-on-small-only">${member.telephone}</td>
-                    <td class="center"><a href="membre_details?id=${member.id}"><ion-icon class="details" name="information-circle-outline"></ion-icon></a></td>
+                    <td>${membre.prenom}</td>
+                    <td>${membre.nom}</td>
+                    <td class="hide-on-small-only">${membre.adress}</td>
+                    <td class="hide-on-small-only">${membre.email}</td>
+                    <td class="hide-on-small-only">${membre.telephone}</td>
+                    <td class="center"><a href="membre_details?id=${membre.id}"><ion-icon class="details" name="information-circle-outline"></ion-icon></a></td>
                   </tr>
                 </c:forEach>
               </c:if>
