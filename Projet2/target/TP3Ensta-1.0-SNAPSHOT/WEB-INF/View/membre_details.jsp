@@ -40,12 +40,18 @@
 	              <!-- Pour cela, vous devez rajouter l'attribut selecter sur la balise <option> concern�e -->
 					<c:choose>
 						<c:when test="${membre.abonnement == 'BASIC'}">
-							<option value="BASIC" selected>BASIC</option>
+							<option value="BASIC" selected>Abonnement BASIC</option>
+							<option value="PREMIUM">Abonnement PREMIUM</option>
+							<option value="VIP">Abonnement VIP</option>
 						</c:when>
 						<c:when test="${membre.abonnement == 'PREMIUM'}">
+							<option value="BASIC">Abonnement BASIC</option>
 							<option value="PREMIUM" selected>Abonnement PREMIUM</option>
+							<option value="VIP">Abonnement VIP</option>
 						</c:when>
 						<c:when test="${membre.abonnement == 'VIP'}">
+							<option value="BASIC">Abonnement BASIC</option>
+							<option value="PREMIUM">Abonnement PREMIUM</option>
 							<option value="VIP" selected>Abonnement VIP</option>
 						</c:when>
 						<c:otherwise>

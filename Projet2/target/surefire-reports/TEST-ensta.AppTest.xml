@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ensta.AppTest" time="0.081" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ensta.AppTest" time="0.064" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -20,7 +20,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="localRepository" value="/home/gpsobreira/.m2/repository"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-14-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/mnt/c/Users/gabri/OneDrive/Área de Trabalho/Faculdade/ENSTA/2020.2/IN205/Projet/Projet_pires-sobreira_gabriel/Projet2/target/surefire/surefirebooter10256557349984098418.jar /mnt/c/Users/gabri/OneDrive/Área de Trabalho/Faculdade/ENSTA/2020.2/IN205/Projet/Projet_pires-sobreira_gabriel/Projet2/target/surefire 2021-04-02T22-44-19_982-jvmRun1 surefire8281277093085276534tmp surefire_017225363413465387935tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/gabri/OneDrive/Área de Trabalho/Faculdade/ENSTA/2020.2/IN205/Projet/Projet_pires-sobreira_gabriel/Projet2/target/surefire/surefirebooter1985394732201622494.jar /mnt/c/Users/gabri/OneDrive/Área de Trabalho/Faculdade/ENSTA/2020.2/IN205/Projet/Projet_pires-sobreira_gabriel/Projet2/target/surefire 2021-04-02T23-16-16_139-jvmRun1 surefire2715575620261445262tmp surefire_010881330644616608605tmp"/>
     <property name="java.vendor.url.bug" value="Unknown"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="jdk.debug" value="release"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.version" value="14.0.2+12-Ubuntu-120.04"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
-    <property name="surefire.real.class.path" value="/mnt/c/Users/gabri/OneDrive/Área de Trabalho/Faculdade/ENSTA/2020.2/IN205/Projet/Projet_pires-sobreira_gabriel/Projet2/target/surefire/surefirebooter10256557349984098418.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/gabri/OneDrive/Área de Trabalho/Faculdade/ENSTA/2020.2/IN205/Projet/Projet_pires-sobreira_gabriel/Projet2/target/surefire/surefirebooter1985394732201622494.jar"/>
   </properties>
   <testcase name="shouldAnswerWithTrue" classname="ensta.AppTest" time="0.002"/>
 </testsuite>
